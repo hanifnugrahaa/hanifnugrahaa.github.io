@@ -1,12 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hanif Nugraha - Web Portfolio</title>
+  <style>
+    /* Color Palette */
+    :root {
+      --color-1: #d2d0a0;
+      --color-2: #9ebc8a;
+      --color-3: #73946b;
+      --color-4: #537d5d;
+      --bg-dark: #1a1a1a;
+      --text-light: #e6e6e6;
+      --shadow-color: rgba(115, 148, 107, 0.6);
+    }
+
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: linear-gradient(145deg, var(--color-1), var(--color-2));
+      box-shadow: 0 10px 40px var(--shadow-color);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      border: 2px solid var(--color-3);
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid var(--color-3);
+      overflow: hidden;
+      box-shadow: 0 0 12px var(--color-4);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      background: radial-gradient(circle at center, var(--color-3), var(--color-4));
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .avatar:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 20px var(--color-4);
+    }
+
+    .intro {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .intro h1 {
+      font-size: 2.8rem;
+      color: var(--color-4);
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      margin-bottom: 0.4rem;
+    }
+    .intro p {
+      font-size: 1.1rem;
+      color: #2c2c2c;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(255 255 255 / 0.7);
+      margin-bottom: 0;
+    }
+
+    section {
+      margin-bottom: 2.8rem;
+    }
+    section h2 {
+      border-left: 5px solid var(--color-3);
+      padding-left: 0.6rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--color-4);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      user-select: none;
+    }
+
+    .skills-list, .social-list {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .skills-list li {
+      background: var(--color-3);
+      color: var(--color-1);
+      padding: 0.5rem 1.1rem;
+      border-radius: 22px;
+      font-weight: 700;
+      box-shadow: 0 0 8px var(--color-4);
+      transition: background 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+    .skills-list li:hover {
+      background: var(--color-4);
+      box-shadow: 0 0 12px var(--color-2);
+    }
+
+    .social-list li {
+      background: var(--color-2);
+      border-radius: 10px;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 0 8px var(--color-3);
+    }
+    .social-list li:hover {
+      background-color: var(--color-4);
+      transform: scale(1.1);
+      box-shadow: 0 0 12px var(--color-4);
+    }
+
+    .social-list li svg {
+      fill: var(--color-1);
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .education p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-4);
+      max-width: 600px;
+      line-height: 1.3;
+      user-select: none;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: var(--color-4);
+      color: var(--color-1);
+      font-weight: 700;
+      padding: 0.75rem 1.4rem;
+      border-radius: 28px;
+      text-decoration: none;
+      box-shadow: 0 0 12px var(--color-3);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      margin-top: 1rem;
+    }
+    .btn-download:hover {
+      background-color: var(--color-2);
+      color: var(--color-4);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px var(--color-2);
+    }
+
+    /* Responsive */
+    @media (max-width: 620px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .intro {
+        min-width: unset;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Helloo</h1>
-    <h2>Aku Hanif</h2>
+  <main class="container" role="main" aria-label="Portfolio of Hanif Nugraha">
+    <header>
+      <div class="avatar" aria-label="Avatar of Hanif Nugraha">
+        <img src="" alt="Photo of Hanif Nugraha" />
+      </div>
+      <div class="intro">
+        <h1>Hanif Nugraha</h1>
+        <p>Mahasiswa tahun kedua yang suka Web Development & IoT</p>
+      </div>
+    </header>
+
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Tentang Saya</h2>
+      <p>Halo! Saya Hanif Nugraha, mahasiswa teknik elektronika yang juga antusias dalam bidang web development dan Internet of Things (IoT). Saya senang menggabungkan antara hardware dan software untuk menciptakan solusi inovatif.</p>
+    </section>
+
+    <section class="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Keahlian</h2>
+      <ul class="skills-list" aria-label="Daftar keahlian">
+        <li>Elektronika</li>
+        <li>Web Development</li>
+        <li>Internet of Things (IoT)</li>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Microcontrollers</li>
+      </ul>
+    </section>
+
+    <section class="education" aria-labelledby="education-title">
+      <h2 id="education-title">Pendidikan</h2>
+      <p>Saat ini saya sedang menempuh pendidikan sebagai mahasiswa semester 4 di program studi Teknik Elektronika.</p>
+    </section>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Sosial Media & CV</h2>
+      <ul class="social-list" role="list" aria-label="Sosial media links">
+        <li title="LinkedIn" onclick="window.open('https://www.linkedin.com/in/hanif-ardiyanta-nugraha-96969b336', '_blank')" role="link" tabindex="0" onkeypress="if(event.key==='Enter'){this.click()}">
+          <svg role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.7 0-5 2.3-5 5v14c0 2.7 2.3 5 5 5h14c2.7 0 5-2.3 5-5v-14c0-2.7-2.3-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-1 0-1.75-.82-1.75-1.75s.75-1.75 1.75-1.75 1.75.82 1.75 1.75-.75 1.75-1.75 1.75zm13.5 11.25h-3v-5.6c0-1.3-.03-2.9-1.77-2.9-1.8 0-2.07 1.4-2.07 2.82v5.68h-3v-10h2.9v1.4h.04c.4-.76 1.38-1.57 2.83-1.57 3 0 3.55 1.98 3.55 4.56v5.6z"/></svg>
+        </li>
+      </ul>
+      <a href="Hanif_Nugraha_CV.pdf" download="Hanif_Nugraha_CV.pdf" class="btn-download" aria-label="Download CV Hanif Nugraha">Unduh CV</a>
+    </section>
+  </main>
+
+  <script>
+    // Accessibility: Allow keyboard interaction on social icons
+    const socialLinks = document.querySelectorAll('.social-list li');
+    socialLinks.forEach(el => {
+      el.addEventListener('keypress', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          el.click();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+

@@ -1,50 +1,108 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hanif Nugraha - Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hanif Nugraha Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script src="main.js" defer></script>
 </head>
 <body>
-  <main class="container" role="main" aria-label="Portfolio Hanif Nugraha">
-    <header class="header">
-      <img src="" alt="Foto Hanif Nugraha" class="avatar" id="avatar" />
-      <div>
-        <h1>Hanif Nugraha</h1>
-        <p>Mahasiswa Elektronika | Web Dev & IoT Enthusiast</p>
-        <button id="toggle-theme" aria-label="Toggle dark/light mode">🌙</button>
-      </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="header__logo">HN.</a>
+            <nav class="main-nav">
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header__actions">
+                 <button id="toggle-theme" aria-label="Toggle dark/light mode">
+                  <span class="toggle-thumb"></span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <section aria-labelledby="about-title">
-      <h2 id="about-title">Tentang Saya</h2>
-      <p>Saya Hanif Nugraha, mahasiswa elektronika yang antusias di bidang web development dan IoT. Saya suka menggabungkan hardware & software untuk solusi inovatif.</p>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">Hi, I'm Hanif Nugraha.</h1>
+                <p class="hero__subtitle">I build things for the web & IoT.</p>
+                <p class="hero__description">
+                  An Electronics and Instrumentation student with a passion for developing innovative digital solutions, ranging from intuitive web interfaces to integrated IoT systems.
+                </p>
+                <a href="#projects" class="btn btn--hero">Lihat Proyek Saya</a>
+            </div>
+        </section>
 
-    <section aria-labelledby="skills-title">
-      <h2 id="skills-title">Keahlian</h2>
-      <ul class="skills-list" id="skills-list"></ul>
-    </section>
+        <div class="content-wrapper">
+            <section id="about" class="content-section" data-visible="false">
+                <h2 class="section-title">Tentang Saya</h2>
+                <p>
+                  Mahasiswa Teknik Elektronika dengan keahlian ganda di bidang rekayasa perangkat keras dan lunak. Saya menerjemahkan kebutuhan pengguna menjadi solusi nyata melalui Pengembangan Web dan Internet of Things (IoT). Fokus utama saya adalah menciptakan sistem yang terintegrasi secara mulus dengan pengalaman pengguna sebagai prioritas tertinggi. Siap untuk menerapkan kemampuan belajar cepat saya dalam lingkungan yang dinamis dan inovatif.
+                </p>
+                <div class="button-container">
+                  <a href="Hanif_Nugraha_CV.pdf" download class="btn">Unduh CV</a>
+              </div>
+              </div>
+            </section>
 
-    <section aria-labelledby="education-title">
-      <h2 id="education-title">Pendidikan</h2>
-      <p>Mahasiswa semester 4, Elektronika.</p>
-    </section>
+            <section id="skills" class="content-section" data-visible="false">
+                <h2 class="section-title">Keahlian Utama</h2>
+                <ul class="skills-list" id="skills-list">
+                    </ul>
+            </section>
 
-    <section aria-labelledby="contact-title">
-      <h2 id="contact-title">Kontak & Sosial Media</h2>
-      <ul class="social-list" id="social-list"></ul>
-      <a href="Hanif_Nugraha_CV.pdf" download class="btn">Unduh CV</a>
-      <form class="contact-form" action="mailto:hanif@email.com" method="POST" enctype="text/plain">
-        <input type="text" name="name" placeholder="Nama" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Pesan" required></textarea>
-        <button type="submit" class="btn">Kirim Pesan</button>
-      </form>
-    </section>
-  </main>
-  <script src="main.js"></script>
+            <section id="projects" class="content-section" data-visible="false">
+                <h2 class="section-title">Proyek Pilihan</h2>
+                <div class="swiper project-slider">
+                    <div class="swiper-wrapper" id="projects-container">
+                        </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <section id="contact" class="content-section" data-visible="false">
+              <div class="contact-container">
+                  <div class="contact-info">
+                      <h2 class="section-title--left">Let's Create Something Together.</h2>
+                      <p>
+                          Punya ide proyek atau pertanyaan? Saya sangat antusias untuk mendengarnya. Mari kita wujudkan sesuatu yang luar biasa.
+                      </p>
+                      <p>
+                          Anda bisa langsung mengirim email ke:
+                      </p>
+                      <a href="mailto:hanif@email.com" class="contact-email">hanifardiyantanugraha@mail.ugm.ac.id</a> 
+                      </div>
+          
+                  <div class="contact-form-wrapper">
+                      <form class="contact-form" action="https://formspree.io/f/xrbkjkgk" method="POST">
+                          <input type="text" name="name" placeholder="Nama Anda" aria-label="Nama Anda" required />
+                          <input type="email" name="email" placeholder="Email Anda" aria-label="Email Anda" required />
+                          <textarea name="message" placeholder="Ceritakan ide Anda..." aria-label="Pesan Anda" rows="5" required></textarea>
+                          <button type="submit" class="btn">Kirim Pesan</button>
+                      </form>
+                  </div>
+              </div>
+          </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="social-list" id="social-list">
+            </ul>
+        <p class="footer-copy">&copy; 2025 Hanif Ardiyanta Nugraha. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
-

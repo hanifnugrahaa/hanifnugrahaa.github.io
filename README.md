@@ -1,3 +1,3 @@
-# 🚀 Portfolio Mahasiswa Elektronika & Instrumentasi
+#  Portfolio Hanif Ardiyanta Nugraha
 
-Landing page sederhana yang dibuat untuk menampilkan profil, keahlian, dan project. Website ini dirancang sebagai personal branding dan showcase portofolio.
+Landing page yang dibuat untuk menampilkan profil, keahlian, dan project. Website ini dirancang sebagai personal branding dan showcase portofolio.

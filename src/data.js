@@ -84,5 +84,29 @@ export const projects = [
     imageUrl: "/assets/images/student grades.png",
     // LINK GITHUB PROYEK INI
     githubUrl: "https://github.com/hanifnugrahaa/student-grades-app"
+  },
+  {
+    name: "Elins Research Club (ERC) UGM Website",
+    description: "Responsible for maintaining and updating the user interface (UI) for erc.elins.id, a platform showcasing research projects and achievements for the Electronics and Instrumentation student community at UGM.",
+    // SCREENSHOT GAMBAR PROJECT
+    imageUrl: "/assets/images/web-erc.png",
+    // LINK GITHUB PROYEK INI
+    githubUrl: "https://erc.elins.id/"
+  },
+  {
+    name: "Arithmetic Game Java",
+    description: "Developed an educational game that runs entirely in a console environment, built with Java. The application interactively presents addition and subtraction problems to help children learn calculation in a focused, distraction-free interface. Core features include a scoring system to track progress and a lives system for a challenging, game-like experience.",
+    // SCREENSHOT GAMBAR PROJECT
+    imageUrl: "/assets/images/arithmetic-game.png",
+    // LINK GITHUB PROYEK INI
+    githubUrl: "https://github.com/hanifnugrahaa/arithmetics-game"
+  },
+  {
+    name: "Smart Plant Watering System PLC",
+    description: "A complete schematic and PLC ladder logic design for an automated system that maintains optimal plant health. The design integrates temperature, soil moisture, and NPK sensors to intelligently control actuators like exhaust fans, sprinklers, and a fertilizer dispenser, ensuring ideal growing conditions are met autonomously. This project serves as the engineering blueprint for the physical implementation of a smart agriculture system.",
+    // SCREENSHOT GAMBAR PROJECT
+    imageUrl: "/assets/images/plc-smartplant.png",
+    // LINK GITHUB PROYEK INI
+    githubUrl: "https://github.com/hanifnugrahaa/PLC-Design-Scheme-Smart-Plant-Watering-System"
   }
-];
+  ];

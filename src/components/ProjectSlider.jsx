@@ -28,7 +28,7 @@ function ProjectCard({ project }) {
         <p className="project-card__description">{project.description}</p>
         <div className="project-card__links">
           <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-card__link">
-            Check it out on GitHub
+            Check it out
           </a>
         </div>
       </div>
@@ -40,7 +40,7 @@ function ProjectCard({ project }) {
 function ProjectSlider() {
   return (
     <>
-    <h2 className="section-title">Featured Projects</h2>
+    <h2 className="section-title">Projects</h2>
       <Swiper
         modules={[Navigation, Pagination]}
         loop={true}

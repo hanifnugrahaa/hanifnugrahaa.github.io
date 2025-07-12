@@ -103,7 +103,7 @@ export const projects = [
   },
   {
     name: "Smart Plant Watering System PLC",
-    description: "A complete schematic and PLC ladder logic design for an automated system that maintains optimal plant health. The design integrates temperature, soil moisture, and NPK sensors to intelligently control actuators like exhaust fans, sprinklers, and a fertilizer dispenser, ensuring ideal growing conditions are met autonomously. This project serves as the engineering blueprint for the physical implementation of a smart agriculture system.",
+    description: "A complete schematic and PLC ladder logic design for an automated system that maintains optimal plant health. The design integrates temperature, soil moisture, and NPK sensors to intelligently control actuators ensuring ideal growing conditions are met autonomously. This project serves as the engineering blueprint for the physical implementation of a smart agriculture system.",
     // SCREENSHOT GAMBAR PROJECT
     imageUrl: "/assets/images/plc-smartplant.png",
     // LINK GITHUB PROYEK INI

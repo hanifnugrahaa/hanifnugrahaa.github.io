@@ -1,5 +1,5 @@
 export const skills = [
-    // --- Konsep Fundamental ---
+    
   "Problem Solving",
   "Data Structures",
   "Algorithms",
@@ -13,7 +13,7 @@ export const skills = [
   "C++",
   "HTML & CSS",
 
-  // --- Pengembangan Web (Front-End & Back-End) ---
+  // --- Front-End & Back-End ---
   "Web Development",
   "React",
   "Node.js",
@@ -26,7 +26,7 @@ export const skills = [
   // --- Pengembangan Mobile ---
   "Android Development",
 
-  // --- IoT & Sistem Tertanam (Embedded) ---
+  // --- IoT  ---
   "IoT",
   "Embedded Systems",
   "Socket Programming",
@@ -34,7 +34,7 @@ export const skills = [
   "Arduino",
   "ESP32",
 
-  // --- Perkakas & Teknologi Lainnya ---
+  // --- Teknologi Lainnya ---
   "Git",
   "Docker"
 ];

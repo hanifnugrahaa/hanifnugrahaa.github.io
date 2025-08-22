@@ -53,37 +53,13 @@ export const socials = [
 ];
 
 export const projects = [
-  {
-    name: "IoT Data Logger",
-    description: "This project connects an ESP32 to Firebase Realtime Database to periodically log sensor data with a timestamp. It demonstrates real-time data logging and retrieval using Firebase, making it suitable for IoT applications.",
+    {
+    name: "PkM Lab SKJ x Lab Elins Monitoring Dashboard",
+    description: "The IoT Device Monitoring Website is a full-stack web application designed to monitor, manage, and visualize data from IoT devices in real time. The project leverages Next.js for the frontend, FastAPI for the backend services, and SQLite as the lightweight relational database.",
     // SCREENSHOT GAMBAR PROJECT
-    imageUrl: "/assets/images/iot logger.png",
+    imageUrl: "/assets/images/PkM-Lab-SKJ.png",
     // LINK GITHUB PROYEK INI
-    githubUrl: "https://github.com/hanifnugrahaa/firebase-iot-logger" 
-  },
-  {
-    name: "4-DOF Arduino-Based Robotic Arm",
-    description: "A 4-DOF (Degree of Freedom) robotic arm prototype controlled by an Arduino. It implements several servo motors for precise movement in performing simple pick-and-place tasks.",
-    // VIDEO PROJECT
-    imageUrl: "/assets/videos/arm robot.mp4",
-    // LINK GITHUB PROYEK INI
-    githubUrl: "https://github.com/hanifnugrahaa/Arduino-Robot-Arm-Controller"
-  },
-  {
-    name: "Desktop Cashier Application (Java)",
-    description: "This application is designed to support bakery owners in managing production and sales. It features ingredient composition calculations for various bread types, alongside production cost analysis and selling price determination. Developed using Java's Object-Oriented Programming (OOP) concepts, the system ensures a modular structure for future development according to business needs.",
-    // SCREENSHOT GAMBAR PROJECT
-    imageUrl: "/assets/images/bakery shop.png",
-    // LINK GITHUB PROYEK INI
-    githubUrl: "https://github.com/hanifnugrahaa/Bakery-shop-program"
-  },
-  {
-    name: "Student Data Management System",
-    description: "A Python program to record and manage student grade data. This program can add student data (such as Student ID, Name, Grades, and Average Score), display the stored data in a tabular format along with the highest and lowest average scores, and save the data to a file for analysis.",
-    // SCREENSHOT GAMBAR PROJECT
-    imageUrl: "/assets/images/student grades.png",
-    // LINK GITHUB PROYEK INI
-    githubUrl: "https://github.com/hanifnugrahaa/student-grades-app"
+    githubUrl: "https://pkmlab.my.id"
   },
   {
     name: "Elins Research Club (ERC) UGM Website",
@@ -94,13 +70,14 @@ export const projects = [
     githubUrl: "https://erc.elins.id/"
   },
   {
-    name: "Arithmetic Game Java",
-    description: "Developed an educational game that runs entirely in a console environment, built with Java. The application interactively presents addition and subtraction problems to help children learn calculation in a focused, distraction-free interface. Core features include a scoring system to track progress and a lives system for a challenging, game-like experience.",
-    // SCREENSHOT GAMBAR PROJECT
-    imageUrl: "/assets/images/arithmetic-game.png",
+    name: "4-DOF Arduino-Based Robotic Arm",
+    description: "A 4-DOF (Degree of Freedom) robotic arm prototype controlled by an Arduino. It implements several servo motors for precise movement in performing simple pick-and-place tasks.",
+    // VIDEO PROJECT
+    imageUrl: "/assets/videos/arm robot.mp4",
     // LINK GITHUB PROYEK INI
-    githubUrl: "https://github.com/hanifnugrahaa/arithmetics-game"
+    githubUrl: "https://github.com/hanifnugrahaa/Arduino-Robot-Arm-Controller"
   },
+  
   {
     name: "Smart Plant Watering System PLC",
     description: "A complete schematic and PLC ladder logic design for an automated system that maintains optimal plant health. The design integrates temperature, soil moisture, and NPK sensors to intelligently control actuators ensuring ideal growing conditions are met autonomously. This project serves as the engineering blueprint for the physical implementation of a smart agriculture system.",
@@ -108,5 +85,29 @@ export const projects = [
     imageUrl: "/assets/images/plc-smartplant.png",
     // LINK GITHUB PROYEK INI
     githubUrl: "https://github.com/hanifnugrahaa/PLC-Design-Scheme-Smart-Plant-Watering-System"
+  },
+  {
+    name: "IoT Data Logger",
+    description: "This project connects an ESP32 to Firebase Realtime Database to periodically log sensor data with a timestamp. It demonstrates real-time data logging and retrieval using Firebase, making it suitable for IoT applications.",
+    // SCREENSHOT GAMBAR PROJECT
+    imageUrl: "/assets/images/iot logger.png",
+    // LINK GITHUB PROYEK INI
+    githubUrl: "https://github.com/hanifnugrahaa/firebase-iot-logger" 
+  },
+  {
+    name: "Desktop Cashier Application (Java)",
+    description: "This application is designed to support bakery owners in managing production and sales. It features ingredient composition calculations for various bread types, alongside production cost analysis and selling price determination. Developed using Java's Object-Oriented Programming (OOP) concepts, the system ensures a modular structure for future development according to business needs.",
+    // SCREENSHOT GAMBAR PROJECT
+    imageUrl: "/assets/images/bakery shop.png",
+    // LINK GITHUB PROYEK INI
+    githubUrl: "https://github.com/hanifnugrahaa/Bakery-shop-program"
+  },
+  {
+    name: "Arithmetic Game Java",
+    description: "Developed an educational game that runs entirely in a console environment, built with Java. The application interactively presents addition and subtraction problems to help children learn calculation in a focused, distraction-free interface. Core features include a scoring system to track progress and a lives system for a challenging, game-like experience.",
+    // SCREENSHOT GAMBAR PROJECT
+    imageUrl: "/assets/images/arithmetic-game.png",
+    // LINK GITHUB PROYEK INI
+    githubUrl: "https://github.com/hanifnugrahaa/arithmetics-game"
   }
   ];

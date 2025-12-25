@@ -87,12 +87,12 @@ export const projects = [
     githubUrl: "https://github.com/hanifnugrahaa/PLC-Design-Scheme-Smart-Plant-Watering-System"
   },
   {
-    name: "IoT Data Logger",
-    description: "This project connects an ESP32 to Firebase Realtime Database to periodically log sensor data with a timestamp. It demonstrates real-time data logging and retrieval using Firebase, making it suitable for IoT applications.",
+    name: "GamaSense",
+    description: "GamaSense is an IoT-based air quality monitoring dashboard built with React that provides real-time visualization of environmental air quality data. The web application displays various air quality parameters such as pollutant levels, particulate matter (PM2.5, PM10), and other air quality indicators through an interactive and user-friendly interface. Hosted on Vercel, this modern dashboard enables users to monitor and track air quality conditions in their environment through a responsive web platform, making environmental data accessible and easy to understand for real-time decision-making.",
     // SCREENSHOT GAMBAR PROJECT
-    imageUrl: "/assets/images/iot logger.png",
+    imageUrl: "/assets/images/gamasense.png",
     // LINK GITHUB PROYEK INI
-    githubUrl: "https://github.com/hanifnugrahaa/firebase-iot-logger" 
+    githubUrl: "https://gamasense.vercel.app" 
   },
   {
     name: "Desktop Cashier Application (Java)",
@@ -103,11 +103,11 @@ export const projects = [
     githubUrl: "https://github.com/hanifnugrahaa/Bakery-shop-program"
   },
   {
-    name: "Arithmetic Game Java",
-    description: "Developed an educational game that runs entirely in a console environment, built with Java. The application interactively presents addition and subtraction problems to help children learn calculation in a focused, distraction-free interface. Core features include a scoring system to track progress and a lives system for a challenging, game-like experience.",
+    name: "Inventaris Management ERC UGM",
+    description: "Web Inset ERC is a web-based asset management system designed specifically for Elins Research Club (ERC) at Universitas Gadjah Mada (UGM) to record, track, and monitor the borrowing of all club assets and equipment. The platform features a product catalog with filtering capabilities, a shopping cart-like interface for asset borrowing requests, and an admin login system for managing inventory and loan transactions. Hosted on Firebase, this comprehensive inventory management solution streamlines the process of asset allocation within the research club, making it easier for members to browse available equipment, submit borrowing requests, and for administrators to maintain organized records of all club resources under the Department of Computer Science and Electronics, Faculty of Mathematics and Natural Sciences, UGM.",
     // SCREENSHOT GAMBAR PROJECT
-    imageUrl: "/assets/images/arithmetic-game.png",
+    imageUrl: "/assets/images/inseterc.png",
     // LINK GITHUB PROYEK INI
-    githubUrl: "https://github.com/hanifnugrahaa/arithmetics-game"
+    githubUrl: "https://inseterc.web.app/"
   }
   ];

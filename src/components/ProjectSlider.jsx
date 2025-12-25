@@ -3,7 +3,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react'; // Impor komponen Swiper
 import { Navigation, Pagination } from 'swiper/modules'; // Impor modul Swiper
-import 'swiper/css'; // Impor gaya dasar Swiper
+import 'swiper/css'; // Impor Swiper
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 

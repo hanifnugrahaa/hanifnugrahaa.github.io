@@ -8,7 +8,7 @@ function Header({ toggleTheme }) {
       <div className="header-container">
         <a href="#" className="header__logo">HN.</a>
         <nav className="main-nav">
-          <a href="#projects">Projects</a>
+          <a className="projects" href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
         <div className="header__actions">

@@ -1,0 +1,258 @@
+/* src/components/ProjectCard.css */
+
+/* Container utama kartu */
+.card-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Shadow lebih halus */
+    /* Transisi untuk transform dan shadow saat hover container */
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Shadow lebih tegas di Dark Mode (opsional, jika main container berubah) */
+body.dark .card-container {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Gambar Background Proyek */
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Animasi zoom halus pada card yang aktif di tengah slider */
+.card-container.active .project-image {
+    transform: scale(1.05);
+}
+
+/* --- WHITE LIQUID GLASS --- */
+
+/* Overlay gradien PUTIH agar teks gelap terbaca */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradien Putih: Pekat di bawah, transparan di atas */
+    background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 40%, rgba(255,255,255,0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* --- Panel Liquid Glass PUTIH --- */
+.glass-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 24px 16px 24px;
+    z-index: 3;
+    /* Background Putih Transparan */
+    background: rgba(255, 255, 255, 0.3);
+    /* Efek Blur Glass */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    /* Border tipis gelap untuk definisi */
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 32px 32px 0 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Konten (Teks Gelap) --- */
+.project-title {
+    color: #111111; /* Teks Judul Gelap */
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- Tech Stack Pills (Tema Terang) --- */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
+    transition: margin-bottom 0.4s ease;
+}
+
+.tech-pill {
+    /* Background gelap transparan */
+    background: rgba(0, 0, 0, 0.05);
+    /* Border gelap tipis */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* Teks gelap */
+    color: #333333;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+
+/* =========================================
+   BAGIAN KUNCI: EFEK EXPAND ON HOVER
+   (Logika sama, warna disesuaikan)
+   ========================================= */
+
+/* 1. Keadaan Normal: Sembunyikan Deskripsi & Tombol */
+.project-desc,
+.cta-button {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    border-width: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Styling dasar Deskripsi (Teks Gelap) */
+.project-desc {
+    color: rgba(0, 0, 0, 0.7); /* Teks Deskripsi Abu-abu gelap */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Styling dasar Tombol (Tema Terang) */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #111111; /* Teks Tombol Gelap */
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    /* Gradien gelap sangat halus */
+    background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 25%, rgba(255,255,255,0) 70%);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* 2. Keadaan Hover: Munculkan Kembali Elemen */
+.card-container:hover .project-desc {
+    opacity: 1;
+    max-height: 60px;
+    margin-bottom: 20px;
+    margin-top: 16px;
+}
+
+.card-container:hover .tech-stack {
+    margin-bottom: 0;
+    padding: 0px 0px 10px 0px;
+}
+
+.card-container:hover .cta-button {
+    opacity: 1;
+    max-height: 50px;
+    padding: 5px 20px;
+    /* Border tombol saat muncul */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Hover pada tombol (Invert warna: Jadi Hitam Pekat) */
+.cta-button:hover {
+    background: #111111;
+    color: white;
+    border-color: #111111;
+}
+
+.cta-icon {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-icon {
+    transform: translateX(4px);
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+    .card-container { min-height: 420px; }
+    .glass-panel { padding: 20px 20px 16px 20px; }
+    .project-title { font-size: 1.25rem; }
+}
+
+/* =============================
+   DARK MODE (Dark Liquid Glass)
+   ============================= */
+
+/* 1. Ubah background fallback dan pertegas shadow */
+body.dark .card-container {
+    background-color: #111111;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* 2. Balik gradien overlay menjadi hitam pekat di bawah */
+body.dark .image-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0) 70%);
+}
+
+/* 3. Ubah panel kaca menjadi gelap transparan dengan border terang */
+body.dark .glass-panel {
+    background: rgba(20, 20, 20, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 4. Balik warna teks menjadi putih/terang */
+body.dark .project-title {
+    color: #ffffff;
+}
+
+body.dark .project-desc {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 5. Sesuaikan warna Tech Stack Pills */
+body.dark .tech-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* 6. Sesuaikan Tombol CTA untuk Mode Gelap */
+body.dark .cta-button {
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+}
+
+/* Border tombol muncul saat card di-hover (warna terang) */
+body.dark .card-container:hover .cta-button {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Invert warna saat tombol disentuh kursor */
+body.dark .cta-button:hover {
+    background: #ffffff;
+    color: #111111; /* Teks jadi hitam */
+    border-color: #ffffff;
+}

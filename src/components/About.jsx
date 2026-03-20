@@ -11,7 +11,7 @@ function About() {
       </p>
       <div className="button-container">
         {/* Path menunjuk ke folder public */}
-        <a href="/assets/docs/Hanif Ardiyanta Nugraha-CV.pdf" download className="btn">
+        <a href="/assets/docs/CV_Hanif Nugraha.pdf" download className="btn">
           Download CV
         </a>
       </div>

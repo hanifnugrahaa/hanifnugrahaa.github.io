@@ -1,69 +1,105 @@
 // src/components/ProjectSlider.jsx
-
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react'; // Impor komponen Swiper
-import { Navigation, Pagination } from 'swiper/modules'; // Impor modul Swiper
-import 'swiper/css'; // Impor Swiper
+import React, { useState, useCallback } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import { projects } from '../data'; // Impor data proyek
+import ProjectCard from './ProjectCard';
+import ProjectModal from './ProjectModal';
+import { projects } from '../data';
+import './ProjectSlider.css';
 
-// Komponen card proyek 
-function ProjectCard({ project }) {
-  // Logika untuk memilih antara video atau gambar
-  const isVideo = project.imageUrl.endsWith('.mp4');
+const ProjectSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Gunakan useCallback untuk menjaga reference fungsi tetap stabil
+  const handleCardClick = useCallback((project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
+
+  // Membersihkan state project HANYA setelah animasi Framer Motion selesai
+  const handleExitComplete = useCallback(() => {
+    setSelectedProject(null);
+  }, []);
 
   return (
-    <div className="project-card">
-      {isVideo ? (
-        <video className="project-card__image" autoPlay loop muted playsInline>
-          <source src={project.imageUrl} type="video/mp4" />
-        </video>
-      ) : (
-        <img src={project.imageUrl} alt={`Gambar Proyek ${project.name}`} className="project-card__image" loading="lazy" />
-      )}
-      <div className="project-card__content">
-        <h3 className="project-card__title">{project.name}</h3>
-        <p className="project-card__description">{project.description}</p>
-        <div className="project-card__links">
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-card__link">
-            Check it out
-          </a>
-        </div>
+    <div className="curved-carousel-section">
+      <div className="section-header">
+        <h2 className="section-title">Featured Projects</h2>
       </div>
+      
+      <div className="carousel-container">
+        {/* Tombol navigasi kini langsung di-bind ke class Swiper tanpa useRef manual */}
+        <button className="carousel-nav-btn swiper-button-prev-custom" aria-label="Previous project">
+          <ChevronLeft size={24} />
+        </button>
+        
+        <div className="curved-swiper-container">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
+            pagination={{ clickable: true, el: '.custom-pagination' }}
+            spaceBetween={0}
+            slidesPerView="auto"
+            centeredSlides={true}
+            loop={true}
+            speed={600} // Kembalikan ke 600 agar animasinya lebih smooth
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            breakpoints={{
+              // Semua spaceBetween dijadikan 0
+              320: { slidesPerView: "auto", spaceBetween: 0 }, 
+              640: { slidesPerView: "auto", spaceBetween: 0 },
+              768: { slidesPerView: "auto", spaceBetween: 0 },
+              1024: { slidesPerView: "auto", spaceBetween: 0 },
+            }}
+            className="curved-swiper"
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide key={index} className="curved-slide">
+                <ProjectCard 
+                  project={project} 
+                  isActive={index === activeIndex}
+                  onClick={() => handleCardClick(project)}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        
+        <button className="carousel-nav-btn swiper-button-next-custom" aria-label="Next project">
+          <ChevronRight size={24} />
+        </button>
+      </div>
+      
+      <div className="custom-pagination" />
+      
+      <div className="progress-indicator">
+        <span className="current">{activeIndex + 1}</span>
+        <span className="separator">/</span>
+        <span className="total">{projects.length}</span>
+      </div>
+
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onExitComplete={handleExitComplete}
+      />
     </div>
   );
-}
-
-// Komponen slider utama
-function ProjectSlider() {
-  return (
-    <>
-    <h2 className="section-title">Projects</h2>
-      <Swiper
-        modules={[Navigation, Pagination]}
-        loop={true}
-        spaceBetween={30}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        breakpoints={{
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-        }}
-        className="project-slider"
-      >
-        {projects.map((project, index) => (
-          <SwiperSlide key={index}>
-            <ProjectCard project={project} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
-  );
-}
+};
 
 export default ProjectSlider;

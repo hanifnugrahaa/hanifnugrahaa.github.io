@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liquid Glass Project Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    /* Reset sederhana */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #111; /* Background gelap untuk demo */ }
+
+    /* --- Styles Utama Kartu --- */
+
+    /* Container utama kartu */
+    .card-container {
+        position: relative;
+        width: 350px; /* Lebar tetap untuk contoh, di slider nanti bisa responsif */
+        height: 500px;
+        border-radius: 32px; /* Sudut sangat bulat */
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .card-container:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Gambar Background Proyek */
+    .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    /* Overlay gradien agar teks lebih terbaca (opsional tapi disarankan) */
+    .image-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+        z-index: 2;
+    }
+
+    /* --- Panel Liquid Glass --- */
+    .glass-panel {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 24px;
+        z-index: 3;
+
+        /* KUNCI EFEK GLASSMORPHISM */
+        /* Background semi-transparan gelap */
+        background: rgba(20, 20, 20, 0.4);
+        /* Efek blur pada elemen di belakangnya */
+        backdrop-filter: blur(16px) saturate(120%);
+        -webkit-backdrop-filter: blur(16px) saturate(120%);
+        /* Border tipis bercahaya */
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        /* Sudut membulat di bagian atas panel kaca */
+        border-radius: 32px 32px 0 0;
+    }
+
+    /* --- Konten --- */
+    .project-title {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: -0.5px;
+    }
+
+    .project-desc {
+        color: rgba(255, 255, 255, 0.8); /* Putih agak pudar */
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        /* Membatasi teks maks 2 baris dengan ellipsis */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Tech Stack Pills */
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .tech-pill {
+        /* Efek kaca mini untuk tags */
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 20px;
+        backdrop-filter: blur(4px);
+    }
+
+    /* Tombol CTA */
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        padding: 12px 24px;
+        border-radius: 50px;
+        /* Gradien halus untuk tombol */
+        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background: white;
+        color: black;
+        border-color: white;
+    }
+    
+    .cta-icon {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    .cta-button:hover .cta-icon {
+        transform: translateX(4px);
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="card-container">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1472&auto=format&fit=crop" alt="Project Screenshot" class="project-image">
+        
+        <div class="image-overlay"></div>
+
+        <div class="glass-panel">
+            <h2 class="project-title">E-Commerce Redesign</h2>
+            <p class="project-desc">A modern revamp of a fashion store platform focusing on mobile UX and conversion rate optimization.</p>
+            
+            <div class="tech-stack">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Tailwind CSS</span>
+                <span class="tech-pill">Figma</span>
+            </div>
+
+            <a href="#" class="cta-button">
+                View Details
+                <svg class="cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

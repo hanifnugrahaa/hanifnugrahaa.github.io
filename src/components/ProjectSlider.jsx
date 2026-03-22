@@ -31,6 +31,7 @@ const ProjectSlider = () => {
   const handleExitComplete = useCallback(() => {
     setSelectedProject(null);
   }, []);
+  // useCallback(() => {}, [])
 
   return (
     <div className="curved-carousel-section">

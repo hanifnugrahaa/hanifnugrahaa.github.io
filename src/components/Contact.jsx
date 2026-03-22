@@ -12,8 +12,8 @@ function Contact() {
           <p>
             You can email me directly at:
           </p>
-          <a href="mailto:hanifardiyantanugraha@mail.ugm.ac.id" className="contact-email">
-            hanifardiyantanugraha@mail.ugm.ac.id
+          <a href="mailto:hanifardiyanta11@gmail.com" className="contact-email">
+            hanifardiyanta11@gmail.com
           </a>
         </div>
 

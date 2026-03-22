@@ -23,9 +23,6 @@ function Footer() {
           </li>
         ))}
       </ul>
-      <p className="footer-copy">
-        &copy; 2025 Hanif Ardiyanta Nugraha. All Rights Reserved.
-      </p>
     </footer>
   );
 }

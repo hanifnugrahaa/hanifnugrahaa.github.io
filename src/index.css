@@ -197,8 +197,11 @@ body.dark .btn:not(.btn--hero) {
   text-align: center;
 }
 .button-container {
-  text-align: center;
+  display: flex;
+  justify-content: center; 
+  gap: 1.5rem; 
   margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
 
 /* === SPECIFIC COMPONENTS (Skills) === */

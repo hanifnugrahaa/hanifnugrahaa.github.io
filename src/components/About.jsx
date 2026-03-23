@@ -18,6 +18,14 @@ function About() {
         >
           View CV
         </a>
+        <a 
+          href="/assets/docs/Shokumukeirekisho_Hanif_Ardiyanta_Nugraha.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="btn"
+        >
+          View Shokumukeirekisho
+        </a>
       </div>
     </>
   );

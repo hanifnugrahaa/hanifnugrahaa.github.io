@@ -8,6 +8,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import SkillsList from './components/SkillsList';
 import ProjectSlider from './components/ProjectSlider';
+import ActivitySlider from './components/ActivitySlider';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AnimatedSection from './components/AnimatedSection';
@@ -38,6 +39,9 @@ function App() {
           </AnimatedSection>
           <AnimatedSection id="projects">
             <ProjectSlider />
+          </AnimatedSection>
+           <AnimatedSection id="activities">
+            <ActivitySlider />
           </AnimatedSection>
           <AnimatedSection id="contact">
             <Contact />

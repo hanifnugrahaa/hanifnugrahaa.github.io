@@ -113,28 +113,27 @@ export const projects = [
 
 export const myActivities = [
   {
-    name: "Teaching in Koding Next",
-    imageUrl:"/assets/images/activities/teaching-koding-next.jpeg"
+    name: "Advanced Coding Teacher at Koding Next | Inspiring 100+ Young Developers",
+    imageUrl: "/assets/images/activities/teaching-koding-next.jpeg"
   },
   {
-    name:"Teaching Programming Course for ELINS Student",
-    imageUrl:""
+    name: "Lead Programming Instructor | Empowering ELINS Students with Industry-Ready Skills",
+    imageUrl: ""
   },
   {
-    name:"Speaker at GIK UGM",
-    imageUrl:""
+    name: "Keynote Speaker at GIK UGM | Sharing Insights on Tech Innovation & Career Growth",
+    imageUrl: ""
   },
   {
-    name:"Presentation IoT Weather Station for Farmer in Imogiri",
-    imageUrl:"/assets/images/activities/presentation-imogiri.JPG"
+    name: "Software Developer Leader | Empowering Farmers in Imogiri with Smart Weather Station Technology",
+    imageUrl: "/assets/images/activities/presentation-imogiri.JPG"
   },
   {
-    name:"Training Student MAN 2 Yogyakarta about IoT Integration",
-    imageUrl:"/assets/images/activities/man2-yogyakarta.jpeg"
+    name: "IoT Education Facilitator | Training 30+ Students at MAN 2 Yogyakarta on Smart Technology Integration",
+    imageUrl: "/assets/images/activities/man2-yogyakarta.jpeg"
   },
   {
-    name:"Liga Mahasiswa 2025 as Gadjah Mada Basketball Team Player",
-    imageUrl:"/assets/images/activities/lima-basket.jpg"
+    name: "Student Athlete | Representing Gadjah Mada University in LIMA 2025 National Basketball Competition",
+    imageUrl: "/assets/images/activities/lima-basket.jpg"
   }
-
-]
+];

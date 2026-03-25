@@ -1,0 +1,259 @@
+/* src/components/ActivitySlider.css */
+
+/* =========================================
+   ACTIVITY SLIDER SECTION
+   Main container for the activity carousel
+   ========================================= */
+
+/* Main section container */
+.activity-carousel-section {
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section header styling */
+.activity-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Gradient text for section title */
+.activity-section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+/* Subtitle styling */
+.activity-section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Dark mode subtitle */
+body.dark .activity-section-subtitle {
+  color: #aaa;
+}
+
+/* =========================================
+   CAROUSEL CONTAINER & NAVIGATION
+   Layout for the slider and control buttons
+   ========================================= */
+
+/* Main carousel container with flex layout */
+.activity-carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0 0 2rem 0;
+  position: relative;
+  min-height: 550px;
+}
+
+/* Glass morphism navigation buttons */
+.activity-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 50;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Previous button positioning */
+.activity-swiper-button-prev {
+  left: 0%;
+}
+
+/* Next button positioning */
+.activity-swiper-button-next {
+  right: 0%;
+}
+
+/* Dark mode navigation buttons */
+body.dark .activity-nav-btn {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+/* Hover effect for navigation buttons */
+.activity-nav-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-primary);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   SWIPER CONFIGURATION
+   Core slider settings and slide animations
+   ========================================= */
+
+/* Container for Swiper component */
+.activity-swiper-container {
+  width: 100%;
+  max-width: 1200px;
+  overflow: visible;
+}
+
+/* Swiper instance styling */
+.activity-swiper {
+  overflow: visible !important;
+  padding: 2rem 0 !important;
+}
+
+/* Individual slide styling with smooth transitions */
+.activity-slide {
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  width: 450px !important;
+  opacity: 0.3 !important;
+  transform: scale(0.75) !important;
+  filter: blur(4px) !important;
+  will-change: transform, opacity, filter;
+  z-index: 1 !important;
+}
+
+/* Active center slide - fully visible and scaled */
+.activity-slide.swiper-slide-active {
+  opacity: 1 !important;
+  transform: scale(1) translateX(0) !important;
+  filter: blur(0) !important;
+  z-index: 3 !important;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Previous slide - positioned to the left */
+.activity-slide.swiper-slide-prev {
+  opacity: 0.8 !important;
+  filter: blur(1px) !important;
+  z-index: 2 !important;
+  transform: scale(0.85) translateX(15%) !important;
+}
+
+/* Next slide - positioned to the right */
+.activity-slide.swiper-slide-next {
+  opacity: 0.8 !important;
+  filter: blur(1px) !important;
+  z-index: 2 !important;
+  transform: scale(0.85) translateX(-15%) !important;
+}
+
+/* =========================================
+   PAGINATION INDICATORS
+   Custom pagination dots styling
+   ========================================= */
+
+/* Container for pagination bullets */
+.activity-custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+/* Individual pagination bullet */
+.activity-custom-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(128, 128, 128, 0.4) !important;
+  transition: all 0.3s ease;
+}
+
+/* Active pagination bullet - elongated for visual feedback */
+.activity-custom-pagination .swiper-pagination-bullet-active {
+  width: 24px !important;
+  border-radius: 12px !important;
+  background: var(--accent-color) !important;
+}
+
+/* =========================================
+   PROGRESS INDICATOR
+   Current slide counter display
+   ========================================= */
+
+/* Container for slide counter */
+.activity-progress-indicator {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Current slide number - highlighted with accent color */
+.activity-current {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--accent-color);
+}
+
+/* Separator between current and total */
+.activity-separator {
+  margin: 0 8px;
+}
+
+/* Total slides count */
+.activity-total {
+  font-weight: 500;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   Mobile and tablet adaptations
+   ========================================= */
+
+/* Tablet and mobile responsive styles */
+@media (max-width: 768px) {
+  /* Adjust container height for smaller screens */
+  .activity-carousel-container { 
+    min-height: 480px; 
+  }
+  
+  /* Smaller section title on mobile */
+  .activity-section-title {
+    font-size: 2rem;
+  }
+  
+  /* Reposition navigation buttons for mobile */
+  .activity-swiper-button-prev {
+    left: 2%;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .activity-swiper-button-next {
+    right: 2%;
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Adjust slide width for mobile */
+  .activity-slide {
+    width: 280px !important;
+  }
+
+  /* Adjust adjacent slide positioning for mobile */
+  .activity-slide.swiper-slide-prev {
+    transform: scale(0.85) translateX(10%) !important;
+  }
+  
+  .activity-slide.swiper-slide-next {
+    transform: scale(0.85) translateX(-10%) !important;
+  }
+}

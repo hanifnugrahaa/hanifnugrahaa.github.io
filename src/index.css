@@ -180,8 +180,8 @@ body.dark .btn:not(.btn--hero) {
   margin: 0 auto;
 }
 .content-section {
-  margin-bottom: 6rem;
-  padding-top: 6rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;

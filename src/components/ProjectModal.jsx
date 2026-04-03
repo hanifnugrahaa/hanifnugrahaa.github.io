@@ -126,7 +126,7 @@ useEffect(() => {
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '1rem' }}>
                     {project.techStack.map((tech, idx) => (
                       <span key={idx} style={{ background: 'var(--bg-secondary)', padding: '6px 14px', borderRadius: '20px', fontSize: '0.8rem', color: 'var(--text-secondary)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        {getTechIcon(tech)} {tech}
+                        {/*getTechIcon(tech)*/} {tech}
                       </span>
                     ))}
                   </div>

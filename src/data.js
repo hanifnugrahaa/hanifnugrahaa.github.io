@@ -71,43 +71,43 @@ export const socials = [
 export const projects = [
   {
     name: "G-Connect 2025 Weather Station Dashboard",
-    description: "Architected real-time monitoring system for 50+ IoT devices with WebSocket connections, reducing incident response time by 65% through predictive alerts.",
-    metrics: "65%•faster response|95%•uptime", // UBAH format
+    description: "Led software development for IoT-based weather station system using ESP32 and solar power, designing full-stack architecture (frontend, backend, database) with features including real-time monitoring, historical data, alerts, and admin dashboard.",
+    metrics: "ESP32•IoT device|Fullstack•architecture|Real-time•monitoring", 
     imageUrl: "/assets/images/PkM-Lab-SKJ.png",
     githubUrl: "https://pkmlab.my.id",
-    techStack: ["Next.js", "FastAPI", "Tailwind","RESTful APIs", "WebSockets", "SQLite", "Docker"]
+    techStack: ["Next.js", "FastAPI", "RESTful APIs", "WebSockets",  "SQLite", "Docker", "Tailwind"]
   },
   {
     name: "ERC UGM Organization Web",
-    description: "Led frontend architecture for 200+ member research community, improving engagement by 90% with interactive project showcases and real-time collaboration features.",
-    metrics: "90%•engagement boost|200+•active users|40%•faster loads", // UBAH format
+    description: "Developed and optimized key features of organization website, improving engagement by 90% through SEO enhancements and interactive project showcases.",
+    metrics: "50+•projects showcased|20+•external clients|85%•engagement boost", 
     imageUrl: "/assets/images/web-erc.png",
     githubUrl: "https://erc.elins.id/",
     techStack: ["Wordpress", "Elementor"]
   },
   {
     name: "4-DOF Robotic Arm Control System",
-    description: "Engineered inverse kinematics algorithms for precise robotic control with web-based interface, enabling complex movement planning for educational applications.",
-    metrics: "Sub-millimeter•precision|Modular•design", // UBAH format
+    description: "Implemented inverse kinematics for a 4-DOF robotic arm, enabling precise position control and coordinated motion of multiple joints.",
+    metrics: "4-DOF•IK solver|<100ms•latency|Stable•motion control", 
     imageUrl: "/assets/videos/arm robot.mp4",
     githubUrl: "https://github.com/hanifnugrahaa/Arduino-Robot-Arm-Controller",
     techStack: ["Arduino", "Servo", "C++"]
   },
   {
     name: "GamaSense Air Quality Platform",
-    description: "Built real-time pollution monitoring dashboard with predictive analytics, visualizing complex environmental data for actionable public health insights.",
-    metrics: "Real-time•Monitoring|Predictive•models|Web Apps•design", // UBAH format
+    description: "Developed real-time indoor air quality monitoring system for health awareness, visualizing environmental data through a web dashboard for actionable insights.",
+    metrics: "5+•air parameters|Real-time•alerts|Health-focused•insights",
     imageUrl: "/assets/images/gamasense.png",
     githubUrl: "https://gamasense.vercel.app",
-    techStack: ["React.js + Vite", "Node-RED", "WebSockets", "MQTT", "Three.js", "SQLite", "Vercel", "Railway"]
+    techStack: ["React.js + Vite", "Node-RED", "WebSockets", "MQTT", "SQLite", "Vercel", "Railway", "Three.js"]
   },
   {
     name: "ERC Inventory and Rent System",
-    description: "Developed full-featured asset management platform with QR tracking and smart scheduling, optimizing equipment utilization across 50+ research projects.",
+    description: "Developed web-based asset management and rental platform with admin dashboard and authentication system, enabling efficient equipment management and streamlined booking with WhatsApp-based checkout for internal members and external clients.",
     metrics: "WhatsApp•integration|Smart•invoice|10+•items", // UBAH format
     imageUrl: "/assets/images/inseterc.png",
     githubUrl: "https://inseterc.web.app/",
-    techStack: ["React.js", "Express.js" ,"Firebase", "API"]
+    techStack: ["React.js", "Express.js" ,"Firebase" , "API"]
   }
 ];
 
